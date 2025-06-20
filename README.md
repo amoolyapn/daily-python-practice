@@ -7,7 +7,7 @@ This repository contains my daily Python practice to improve consistency, logic 
 
 ## Goals
 
-- Practice Python daily for 30+ days
+- Practicing Python daily
 - Cover key topics: variables, data types, loops, functions, OOP, file handling, etc.
 - Build habits and improve confidence with coding
 - Document learning journey and progress
