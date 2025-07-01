@@ -1,0 +1,63 @@
+#class method
+class Employee:
+    company = "Apple"
+    def show(self):
+        print(f"The name is {self.name} and company is {self.company}")
+    @classmethod
+    def changeCompany(cls,newCompany):
+        cls.company=newCompany
+e1=Employee()
+e1.name="Harry"
+e1.show()
+e1.changeCompany("Tesla")
+e1.show()
+print(Employee.company)
+
+
+#2
+class Exclass:
+    @classmethod
+    def faactory_method(cls,argument1,argument2):
+        return cls(argument1,argument2)
+    
+
+
+#class methods as alternative constructors
+class Person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    @classmethod
+    def from_string(cls,string):
+        name,age=string.split(',')
+        return cls(name,int(age))
+person=Person.from_string("John Doe,30")
+print(person.name,person.age)
+
+
+#dir
+x=  [1,2,3]
+print(dir(x))
+print(x.__add__)
+
+
+#__dict__
+class person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+p=person("John",30)
+print(p.__dict__)
+
+
+#help
+class person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+p=person("John",30)
+print(p.__dict__)
+print(help(person))
+
+
+

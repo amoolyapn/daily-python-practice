@@ -1,0 +1,65 @@
+#Object-oriented-programming
+#Creation of class and object
+class Student:
+    name = "Amoolya"
+    id = 123
+    age = 21
+obj_stu = Student()
+obj_stu.name = "Aishu"
+obj_stu.age=24
+print(obj_stu.name ,obj_stu.age)
+
+
+#self key
+class Student1:
+    name = "Amoolya"
+    id = 123
+    age = 21
+    def info(self):
+      print(f"{self.name} is {self.age} older")
+obj_stu = Student1()
+obj_stu.name = "Akriti"
+obj_stu.age=24
+obj_stu.info()
+
+
+#Constructors  (def __init__(self):)
+class person:
+   def __init__(self,name,id):
+      self.name=name
+      self.id=id
+obj=person("Amoolya",123)
+print(f"i am {obj.name} and my id is {obj.id}")
+
+
+#Default constructors
+class animal:
+   def __init__(self):
+      print("Animals are so friendly")
+obj=animal()
+
+
+#Decorator
+def greet(fx):
+    def mfx():
+      print("Good morning")
+      fx()
+      print("Thanks!!")
+    return mfx
+
+@greet
+def hello():
+   print("Hello everyone")
+hello()
+   
+
+#Getter method (@property)
+class person:
+   def __init__(self,name):
+      self.name=name
+      @property
+      def name(self):
+         return self.name
+obj=person("Ammu")
+print(obj.name)
+   

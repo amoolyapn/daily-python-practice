@@ -1,0 +1,33 @@
+#short hand if-else
+a=9000
+b=400
+print("A") if a<b else print("B") if a>b else print("C")
+ 
+c=(a+b)
+c=a>b if print("D") else print(c)
+
+
+
+#Enumerate function
+fruits=["Apple","Kiwi","Mango"]
+for index,fruit in enumerate(fruits):  #1
+    print(index,fruit)
+
+cities=["Bangalore","UP","Mp","Delhi"]
+for index,city in enumerate(cities):   #2
+    print(index,city)
+
+
+#import
+import math as m
+res=m.sqrt(9)
+print(res)
+print(m.pi)
+
+import pandas as pd
+pd1=pd.read_csv("C:/")
+print(pd1)
+
+import numpy as np
+num1=np.array([1,2,3])
+print(num1)

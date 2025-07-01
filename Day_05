@@ -1,0 +1,64 @@
+#lambda functions
+double = lambda x: x*2
+print(double(5))  #10
+
+cube = lambda y: y*y*y
+print(cube(5))  #125
+
+
+#map()
+def cube(x):
+    return x*x*x     #1
+print(cube(2))
+l=[1,2,3,4,5]
+newl=list(map(cube,l))
+print(newl)
+
+
+#using lambda-funct
+l=[1,2,3,4,5]
+newl = list(map(lambda x:x*x*x,l))   #2
+print(newl)
+
+
+#filter()
+def filter_funct(a):
+    return a>2
+newl=list(filter(filter_funct,l))
+print(newl)
+
+
+#reduce()
+from functools import reduce
+numbers=[1,2,3,4,5]
+sum=reduce(lambda x,y:x+y, numbers)
+print(sum)
+
+#is vs "=="
+#(a is b) compares exact location of obj in memory
+#(a==b)   compares value
+
+a=3
+b=3
+print(a is b)  #True
+print(a==b)    #True
+
+a="3"
+b=3
+print(a is b)  #False
+print(a==b)    #False
+
+a="Harry"
+b="Harry"
+print(a is b)   #True
+print(a==b)     #True
+
+a=(1,2)
+b=(1,2)
+print(a is b)   #True
+print(a==b)     #True
+
+a=[1,2,3]
+b=[1,2,3]
+print(a is b)   #False
+print(a==b)     #True

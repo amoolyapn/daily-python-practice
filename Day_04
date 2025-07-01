@@ -1,0 +1,71 @@
+#Lcoal variable and Global variable
+x=10  #Global var
+def function():
+    y=4  #Local var
+    print(y)
+function()
+print(x)
+
+
+#Changing global var value inside function
+x=10  #Global var
+def function():
+    global x
+    x=6
+    y=4  #Local var
+    print(y)
+function()
+print(x)
+
+
+#File-handling
+
+f=open("myfile.txt",'r')   #read
+text=f.read()
+print(text)
+f.close()
+
+f=open("myfile.txt",'w')   #write
+f.write("Hello!")
+f.close()
+
+f=open("myfile.txt",'a')   #append
+f.write("Good morning")
+f.close()
+
+with ("myfile.txt",'a') as f:
+    f.write("It automatically closes.No need to use close()")
+
+
+#readlines()
+f = open("myfile.txt",'r')
+while True:
+    line = f.readline()
+    if not line():
+        break 
+    print(line)
+f.close()
+
+#writelines()
+f=open("myfile.txt",'w')
+lines=['line 1\n','line 2\n','line 3\n']
+f.writelines(lines)
+f.close()
+
+#seek()
+with("mytext.file","a") as f:
+    f.seek(10) #move current position to 10th byte
+    data=f.read(5) #reads next 5 bytes
+    print(data)
+
+#tell(0)
+with("mytext.file","a") as f:
+    data=f.read(10) #reads first 10 bytes
+    cur_post=f.tell() #saves cur_postn
+    f.seek(cur_post)
+
+#truncate()
+f=open("myfile.txt",'w')   #write
+f.write("Hello world!")
+f.truncate(5) #o/p = Hello
+f.close()

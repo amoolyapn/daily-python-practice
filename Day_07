@@ -1,0 +1,79 @@
+#Inheritance
+class employee:
+    def __init__(self,name,id):
+     self.name = name  
+     self.id = id
+    def employeedetails(self):
+        print(f"The employee details are:{self.name} and his id is {self.id}")
+e=employee("Pushkar",245)
+e.employeedetails()
+
+
+#1
+class employee:   #parentclass
+    def __init__(self,name,id):
+     self.name = name  
+     self.id = id
+    def employeedetails(self):
+        print(f"The employee details are:{self.name} and his id is {self.id}")
+
+class programmer(employee):   #childclass
+   def showlanguage(self):
+      print("The default language is Python")
+
+e1=employee("Amoolya",65000)
+e1.employeedetails()
+e2=programmer("Aishwarya",50000)
+e2.employeedetails()
+e2.showlanguage()
+
+
+#2
+class employee:
+    def __init__(self):
+      self.name="Akul"
+      self.id=123
+    def details(self):
+        print(f"The name is {self.name} and id is {self.id}")
+      
+class person(employee):
+   def person1(self):
+    print("The basic salary is 25000")
+e1=employee()
+e1.details()
+e2=person()
+e2.person1()
+
+#Access Modifiers
+
+#Public access modifier (default)
+class student():
+   def __init__(self):
+      self.name="Harry"
+stu=student()
+print(stu.name)
+
+#Private access modifier
+class student():
+   def __init__(self):
+      self.__name="Nirup"
+stu=student()
+print(stu._student__name)  #Name mangling
+
+#Protected access modifier
+class student():
+   def __init__(self):
+      self._name="Harry"
+      self._course="Science"
+   def _sub_details(self):   #protected method
+      print("python")
+class subject(student):
+    pass
+stu=student()
+stu1=subject()
+print(stu._name)
+print(stu._course)
+stu1._sub_details()
+
+
+

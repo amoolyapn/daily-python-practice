@@ -1,0 +1,95 @@
+#Super() keyword
+
+#1
+class ParentClass:
+    def parent_method(self):
+        print(f"This is parent method")
+class ChildClass(ParentClass):
+    def child_method(self):
+        print(f"This is child method")
+        super().parent_method()
+child_obj = ChildClass()
+child_obj.child_method()
+
+
+#2
+class Employee:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+    def details(self):
+        print(f"The name is {self.name} and age is {self.age}")
+class Person(Employee):
+    def __init__(self,name,age,id):
+        super().__init__(name,age)
+        self.id = id
+e1=Employee("Rohan",25)
+e2=Person("Harry",24,123)
+print(e1.name)
+print(e2.id)
+e1.details()
+e2.details()
+
+
+
+#Method-overriding
+#1
+class shape:
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+    
+    def area(self):
+        return self.x * self.y
+    
+class Circle(shape):
+    def __init__(self,radius):
+        self.radius = radius
+        super().__init__(radius,radius)
+
+    def area(self):
+        return 3.14 * super().area()
+
+c=Circle(5)
+print(c.area())
+    
+
+#2
+class shape:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+    def area(self):
+        return self.x * self.y
+    
+class rectangle(shape):
+    def __init__(self,size1,size2):
+        self.size1=size1
+        self.size2=size2
+        super().__init__(size1,size2)  #super()
+
+    def area(self):
+        return super().area()
+    
+r = rectangle(2,5)
+print(r.area())
+
+
+#Operator-overloading
+
+class vector:
+    def __init__(self,i,j,k):
+        self.i=i
+        self.j=j
+        self.k=k
+    def __str__(self):
+        return f"{self.i}i + {self.j}j + {self.k}k"
+    def __add__(self,x):
+        return vector(self.i + x.i,self.j+x.j,self.k+x.k)
+v1=vector(3,5,6)
+print(v1)
+v2=vector(1,2,9)
+print(v2)
+v3=v1+v2
+print(type(v3))
+

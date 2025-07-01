@@ -1,0 +1,71 @@
+#Get Current Time Using time Module in Python
+import time  # Import the time module
+
+timestamp = time.strftime('%H:%M:%S')  # Get full time in HH:MM:SS format
+print(timestamp)  # Print full timestamp
+
+timestamp = time.strftime('%H')  # Get current hour (24-hour format)
+print(timestamp)  
+
+timestamp = time.strftime('%M')  # Get current minute
+print(timestamp)  
+
+timestamp = time.strftime('%S')  # Get current second
+print(timestamp)  
+
+
+#functions()
+a = int(input("Enter value of a: "))  
+b = int(input("Enter value of b: ")) 
+
+def addition(a, b):  # Define function to add and compare two numbers
+    sum = a + b 
+    print("Sum:", sum)  
+
+    if a > b:
+        print("a is greater") 
+    elif a < b:
+        print("b is greater") 
+    else:
+        print("a and b are equal") 
+addition(a, b)  # Call the function with user inputs
+
+
+#return statement
+def average(*numbers):  # Define a function that accepts any number of arguments
+    sum = 0 
+    for i in numbers:  # Loop through all the numbers
+        sum = sum + i  
+    return sum / len(numbers)  # Return the average by dividing total sum by count
+C = average(5, 6, 7) 
+print(C)  
+
+
+#f-strings
+name="Amoolya"
+city="Delhi"
+print(f"My name is {name} and i'm from {city}")
+
+
+#Doc-strings  - string literals that are written right after the defining a function method.
+def sum(a,b):
+    '''Sum of a and b''' #docstring for the function
+    res=a+b
+    print(res)
+sum(2,1)
+print(sum.__doc__)
+
+
+#PEP 8  - provides guidelines and best practices on how to write python code.
+import this #in shell
+
+
+#Recursion - function calls itself
+n=int(input("Enter the value of n: "))
+def factorial(n):
+    if(n==0 or n==1):
+        return 1
+    else:
+        return n * factorial(n-1)
+print(factorial(n))
+    
