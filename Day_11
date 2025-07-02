@@ -1,0 +1,124 @@
+#Singel-inheritance
+#inherits properties from single parent.
+#1
+class Animal:
+    def __init__(self,name,species):
+        self.name = name
+        self.species = species
+    def make_sound(self):
+        print("The sound made by animal")
+
+class Dog(Animal):
+    def __init__(self,name,breed):
+        Animal.__init__(self,name,species="Dog")
+        self.breed = breed
+    def make_sound(self):
+        print("bark")
+d=Dog("Dog","Doggerman")
+d.make_sound()
+a=Animal("Dog","Dog")
+a.make_sound()
+
+
+#2
+class Animal:
+    def __init__(self,name,species):
+        self.name = name
+        self.species = species
+    def make_sound(self):
+        print("The sound made by animal")
+class Cat(Animal):
+    def __init__(self,name,color):
+        Animal.__init__(self,name,species="Cat")
+        self.color=color
+    def make_sound(self):
+        print("Meoww!")
+c=Cat("Cat","Brown")
+print(c.name)
+print(c.color)
+c.make_sound()
+
+
+#Multiple-inheritance
+#inherits properties from more than 1 parent class.
+class Employee:
+    def __init__(self,name):
+        self.name=name
+    def show(self):
+        print(f"The name is {self.name}")
+
+class Dancer:
+    def __init__(self,dance):
+        self.dance=dance
+    def show(self):
+        print(f"The dance is {self.dance}")
+
+class Person(Employee,Dancer):
+    def __init__(self,dance,name):
+        self.dance=dance
+        self.name=name
+
+b=Person("Kathak","Priya")
+print(b.name)
+print(b.dance)
+b.show()
+
+
+#mro - method resolution order
+class Employee:
+    def __init__(self,name):
+        self.name=name
+    def show(self):
+        print(f"The name is {self.name}")
+
+class Dancer:
+    def __init__(self,dance):
+        self.dance=dance
+    def show(self):
+        print(f"The dance is {self.dance}")
+
+class Person(Employee,Dancer):
+    def __init__(self,dance,name):
+        self.dance=dance
+        self.name=name
+
+b=Person("Kathak","Priya")
+print(b.name)
+print(b.dance)
+b.show()
+print(Person.mro())
+
+
+#Multilevel-inheritance
+#derived class inherits from another derived class.
+class Animal:
+    def __init__(self,name,species):
+        self.name = name
+        self.species = species
+    def make_sound(self):
+        print("The sound made by animal")
+
+class Cat(Animal):
+    def __init__(self,name,color):
+        Animal.__init__(self,name,species="Cat")
+        self.color=color
+    def make_sound(self):
+       # Animal.make_sound(self)
+        print("Meoww!")
+
+class GermanCat(Cat):
+    def __init__(self,name,age):
+        Cat.__init__(self,name,color="Brown")
+        self.age=age
+    def make_sound(self):
+      # Cat.make_sound(self)
+       print("Meoww!!!!!")
+
+g=GermanCat("Kik",34)
+print(g.age)
+print(g.name)
+g.make_sound()
+
+
+#
+
