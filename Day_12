@@ -1,0 +1,115 @@
+#Hybrid-inheritance.
+#combination of multiple and single inheritance.
+class Baseclass:
+    def __init__(self,name):
+        self.name=name
+
+class DerivedClass1(Baseclass):
+    def __init__(self,name,color):
+        super().__init__(name)
+        self.color=color
+
+class DerivedClass2(DerivedClass1):
+    def __init__(self,name,color,city):
+        super().__init__(name,color)
+        self.city=city
+
+class DerivedClass3(DerivedClass2):
+    def __init__(self,name,color,city):
+        super().__init__(name,color,city)
+
+d3=DerivedClass3("Delhi","Brown","Delhi")
+print(d3.name)
+print(d3.city)
+print(d3.color)
+
+
+#2
+# Base class
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+class Teacher(Person):
+    def __init__(self, name, subject):
+        Person.__init__(self, name)  # Explicit call
+        self.subject = subject
+
+class Student(Person):
+    def __init__(self, name, grade):
+        Person.__init__(self, name)  # Explicit call
+        self.grade = grade
+
+# Hybrid Inheritance (Manually handle both parents)
+class TeachingAssistant(Teacher, Student):
+    def __init__(self, name, subject, grade, hours):
+        Person.__init__(self, name)     
+        self.subject = subject
+        self.grade = grade
+        self.hours = hours
+
+    def display(self):
+        print("Name:", self.name)
+        print("Subject:", self.subject)
+        print("Grade:", self.grade)
+        print("Working Hours:", self.hours)
+
+ta = TeachingAssistant("Riya", "Math", "A+", 20)
+ta.display()
+
+
+
+
+#Hierarchial-inheritance
+#multiple subclass inherit from single base class
+class Person:
+    def __init__(self,name):
+        self.name=name
+
+class Employee(Person):
+    def __init__(self,name,age):
+        super().__init__(name)
+        self.age=age
+
+class Singer(Person):
+    def __init__(self,name,song):
+        super().__init__(name)
+        self.song=song
+
+class Dancer(Person):
+    def __init__(self,name,dance):
+        super().__init__(name)
+        self.dance=dance
+a=Dancer("Ammu\n","kathak\n")
+print(a.dance)
+print(a.name)
+
+b=Employee("Ravi\n","25\n")
+print(b.age)
+print(b.name)
+
+c=Singer("Guru\n","Melody\n")
+print(c.name)
+print(c.song)
+
+
+#2
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+class Dog(Animal):
+    def bark(self):
+        return f"{self.name} says Woof!"
+
+class Cat(Animal):
+    def meow(self):
+        return f"{self.name} says Meow!"
+
+d = Dog("Tommy")
+c = Cat("Kitty")
+
+print(d.bark()) 
+print(c.meow()) 
+print(d.name)
+
