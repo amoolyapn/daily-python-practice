@@ -1,0 +1,41 @@
+#time module
+
+#1. time.time()
+import time
+print(time.time())
+
+#epoch - the point where the time starts,the return value of time.getime(0)
+
+
+#2. time.sleep()
+import time
+print(4)
+time.sleep(3)
+print("This is printed after 3 seconds!!")
+
+
+#3. time.strftime() [formats time value as a string]
+import time
+t=time.localtime()
+formatted_time=time.strftime("%Y-%m-%d  %H:%M:%S",t)
+print(formatted_time)
+
+                        
+#WALRUS OPERATOR[:=] - allows you to assign a value to a variable within an expression.
+a=True
+print(a:=False)
+
+print(a:=False)
+
+
+numbers=[1,2,3,4,5,6]  #List
+while(n:= len(numbers))>0:
+    print(numbers.pop())  #Pops from last
+
+
+foods=list()
+while(food:= input("What food do you Like?"))!="quit":
+    foods.append(food)
+
+
+#Shutil module - shell utility [efficiently automate tasks that are performed on files and directories.]
