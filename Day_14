@@ -1,0 +1,55 @@
+#im going to build a model based on it as a final year project!!
+import win32com.client
+l = ["Rahul", "Kushi", "Amoolya"]
+# Initialize the SAPI voice object
+speaker = win32com.client.Dispatch("SAPI.SpVoice")
+for name in l:
+    speaker.Speak(f"Welcome {name}")
+
+
+
+#Requests module - requests module in HTTP lib that enables developers to send HTTP requests.
+import requests
+response = requests.get("filepath")
+print(response.text)
+
+
+
+#Generators - it stores the information used to create the values in advance but doesnt store the values.
+#Creates iterable sequence of values
+def my_generator():
+    for i in range(5):
+        yield i  #returns value from generator and suspends execution untill next value is requested.
+gen=my_generator()
+print(next(gen))
+print(next(gen))
+    
+
+
+#Function Cachcing
+#improves performance by storing results of a function by using functools.lru_cache decorator.
+#1
+import functools
+@functools.lru_cache(maxsize=None)
+def fib(n):
+    if n<2:
+        return n
+    return fib(n-1) + fib(n-2)
+print(fib(20))
+
+#2
+from functools import lru_cache
+import time
+@lru_cache(maxsize=None)  #memoize (subsequently retrives without repeating the computation)
+def fx(n):
+    time.sleep(3)
+    return n*5
+
+print(fx(20))
+print("Done for 20")
+print(fx(10))
+print("Done for 10")
+print(fx(5))
+print("Done for 5")
+
+
