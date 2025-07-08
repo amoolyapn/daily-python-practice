@@ -1,0 +1,59 @@
+#Basics of python
+#1
+name = "John" #string
+age = 22 #int
+is_student = False # bool
+weight = 69.5 #float
+x = None #NoneType
+print(type(x))
+
+print(type(is_student))
+
+s = "100"
+print(int(s)+age)
+
+
+#2
+a = 10
+b = 3
+print(a + b)  # Output: 13
+print(a - b)  # Output: 7
+print(a * b)  # Output: 30
+print(a / b)  # Output: 3.3333...
+print(a // b)  # Output: 3 (Floor Division)
+print(a % b)  # Output: 1 (Modulus|Remainder)
+print(a ** b)  # Output: 1000 (Exponentiation)
+
+print(a+b-a+b*2**3)
+
+
+#3
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name
+print(full_name)
+
+# repetition
+message = "This is a Warning! "
+print(message*5)
+
+print(message.upper())
+print(message.lower())
+print(message.strip())
+print(message.replace("Warning", "Error"))
+
+name = '''Akshay said "hello"
+        darshan said "hi"
+        '''
+print(len(message)) # length
+
+name = "Akshay"
+print(name[4]) # index = position - 1
+print(name[2:6])
+print(name[2:])
+print(name[:4])
+print(name[-2])
+print(name[::3])
+
+s = "Akshay \tis a good boy"
+print(s)
