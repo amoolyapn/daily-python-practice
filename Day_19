@@ -1,0 +1,45 @@
+#Implementing BODMAS rule through program
+name = input("What is your name?   ")
+print(f"Hi {name}, Give me four numbers.")
+
+a = int(input("a >>  "))
+b = int(input("b >>  "))
+c = int(input("c >>  "))
+d = int(input("d >>  "))
+
+e = a * b - c / d #BODMAS RULE
+
+print(f"{name}, The sum of abcd is >>  {e} " )
+      
+           
+#Palindrome
+def fun(s):
+    return s == s[::-1]
+print(fun("madam"))
+
+
+
+#Counting the number of vowels
+def num_of_vowels(s):
+    return sum(1 for char in s if char.lower() in 'aeiou')
+print(num_of_vowels("Aishwarya"))
+
+
+
+#taking input from user
+n=input("Enter the word: ")
+def vowels(n):
+    return sum(1 for ch in n if ch.lower() in 'aeiou')
+print(int(vowels(n)))
+
+
+
+#Factorail of a number.
+n = int(input("Enter a number: "))
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+print(int(factorial(n)))
