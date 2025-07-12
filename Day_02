@@ -1,0 +1,71 @@
+#factorial - factorial(n) = n*factorial(n-1)
+
+def factorial(n):
+    if (n==0 or n==1):
+        return 1
+    else:
+        return n*factorial(n-1)
+print(factorial(n))
+
+
+
+#Dictionary - key - value pair
+for i in range(6):
+    print(i)
+    if i == 4:
+        break
+else:
+    print("no i")
+
+
+#2
+i=0
+while i<7:
+    print(i)
+    i=i+1
+    if i==4:
+        break
+else:
+    print("Sorry no i")
+
+
+
+#Exception handling
+a = input("enter value: ")
+print(f"Multiplication of {a}")
+try:
+for i in range(11):
+    print(f"{int(a)} x{i}={int(a)*i}")
+except Exception as e:
+print(e)
+print("End of program")
+
+
+
+#Finally clause - part of exception handling is always executed.
+a=int(input("enter a number:"))
+if(a<5 or a>9):
+    raise Value Error(" ")
+try:
+#content
+except:
+#content
+finally:
+print("This statement gonna execute always!..")
+
+
+
+#Short hand if-else
+a=200
+b=40
+print("A") if a>b else print("B")
+if a==b else print("C")
+
+
+
+#Enumerate function - allows to loop over a sequence and get the index 
+#and value of each element in the sequence at same time.
+fruits = ["Mango","kiwi","Apple"]
+for index , fruit in enumerate(fruits):
+    print(index,fruit)
+
